@@ -1,115 +1,79 @@
 import React from "react";
-import { Text, View, Image } from "react-native";
+import { Text, View, Image, TouchableOpacity } from "react-native";
 import { Button, Content } from "native-base";
 import CoverImage from "../../../../assets/images/cover.png";
 import Profile from "../../../../assets/images/profile.png";
-import { ScrollView } from "react-native-gesture-handler";
 import { styles } from "./styles";
+import { LinearGradient } from "expo";
 
 class HouseMenu extends React.Component {
   render() {
     let { uid, neighborID } = this.props;
     return (
-      <View style={[styles.dFlex, styles.modalContent]}>
-        <Content style={[styles.dFlex, styles.bottomBox]}>
-          <View style={[styles.dFlex, styles.firstButtons]}>
-            <Button
-              style={[
-                styles.width("30%"),
-                styles.btn,
-                styles.btnBg("#20bbd4"),
-                styles.invite
-              ]}
+      <View
+        style={{
+          backgroundColor: "#5e8ac6",
+          padding: 10,
+          borderRadius: 4,
+          borderColor: "#000000",
+          borderWidth: 2,
+          width: "50%",
+          height: 400,
+          flex: 1,
+          flexDirection: "row",
+          justifyContent: "space-around"
+        }}
+      >
+        <TouchableOpacity
+          style={{
+            width: "48%",
+            height: 60,
+            borderColor: "black",
+            borderWidth: 2
+          }}
+          onPress={() => console.log("Invite Method Called")}
+        >
+          <LinearGradient
+            colors={["#005fa6", "#0c8fd6", "#39bcd6"]}
+            style={{
+              alignItems: "center",
+              flex: 1
+            }}
+          >
+            <Text
+              style={[styles.btnText, { textAlign: "center", lineHeight: 60 }]}
             >
-              <View
-                style={{
-                  borderColor: "red",
-                  borderWidth: 5,
-                  width: "100%",
-                  padding: 10
-                }}
-              >
-                <View
-                  style={{
-                    borderColor: "red",
-                    borderWidth: 5,
-                    width: "100%",
-                    padding: 10
-                  }}
-                >
-                  <Text>Invite</Text>
-                </View>
-              </View>
-              {/* <Text style={styles.btnText}>INVITE</Text> */}
-            </Button>
+              INVITE
+            </Text>
+          </LinearGradient>
+        </TouchableOpacity>
 
-            <Button
-              style={[
-                styles.width("30%"),
-                styles.btn,
-                styles.btnBg("#67bcff"),
-                styles.like
-              ]}
+        <TouchableOpacity
+          style={{
+            width: "48%",
+            height: 60,
+            borderColor: "black",
+            borderWidth: 2
+          }}
+          onPress={() => console.log("Move Method Called")}
+        >
+          <LinearGradient
+            colors={["#005fa6", "#0c8fd6", "#39bcd6"]}
+            style={{
+              alignItems: "center",
+              flex: 1
+            }}
+          >
+            <Text
+              style={[styles.btnText, { textAlign: "center", lineHeight: 60 }]}
             >
-              <Text style={styles.btnText}>MOVE</Text>
-            </Button>
-
-            <Button
-              style={[
-                styles.width("40%"),
-                styles.btn,
-                styles.btnBg("#fcbc30"),
-                styles.cancel
-              ]}
-              //   onPress={this.props.onCancel}
-            >
-              <Text style={styles.btnText}>CANCEL</Text>
-            </Button>
-          </View>
-        </Content>
+              MOVE
+            </Text>
+          </LinearGradient>
+        </TouchableOpacity>
       </View>
     );
   }
 }
 
 export default HouseMenu;
-
-// <View style={[styles.dFlex, styles.secondButtons]}>
-// <Button style={[
-//   styles.width('25%'),
-//   styles.btn,
-//   styles.btnBg('#a2b224'),
-//   styles.delete
-// ]}
-// >
-//   <Text style={styles.btnText}>Delete</Text>
-// </Button>
-// <Button style={[
-//   styles.width('25%'),
-//   styles.btn,
-//   styles.btnBg('#f9622d'),
-//   styles.add
-// ]}
-//   onPress={() => {
-//     this.props.seePost();
-//   }}
-// >
-//   <Text style={styles.btnText} >View Post</Text>
-// </Button>
-// <Button style={[
-//   styles.width('50%'),
-//   styles.btn,
-//   styles.btnBg('#c42222'),
-//   styles.next
-// ]}
-//   onPress={() => {
-//     if (uid === neighborID) {
-//       this.props.openPostWindow();
-//     } else {
-//       this.props.openIMWindow();
-//     }
-//   }}
-// >
-//   <Text style={styles.btnText}>{uid === neighborID ? "New Post" : "Send IM"}</Text>
-// </Button>
-// </View>

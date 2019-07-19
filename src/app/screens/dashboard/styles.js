@@ -26,6 +26,15 @@ export const styles = StyleSheet.create({
     width: "70%",
     height: 600
   },
+  menuModalContent: {
+    backgroundColor: "#5e8ac6",
+    padding: 10,
+    borderRadius: 4,
+    borderColor: "#000000",
+    borderWidth: 2,
+    width: "50%",
+    height: 400
+  },
   topBoxContainer: {
     backgroundColor: "#222222",
     height: "60%",
@@ -42,6 +51,11 @@ export const styles = StyleSheet.create({
   bottomBox: {
     flexDirection: "column",
     marginTop: 10
+  },
+  menubottomBox: {
+    flexDirection: "column",
+    marginTop: 10,
+    flex: 1
   },
   coverContainer: {},
   cover: {
