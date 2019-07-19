@@ -5,6 +5,7 @@ import CoverImage from "../../../../assets/images/cover.png";
 import Profile from "../../../../assets/images/profile.png";
 import { ScrollView } from "react-native-gesture-handler";
 import { styles } from "./styles";
+import { LinearGradient } from "expo";
 
 class RenderUserPanel extends React.Component {
   render() {
@@ -49,73 +50,137 @@ class RenderUserPanel extends React.Component {
         </View>
 
         <Content style={[styles.dFlex, styles.bottomBox]}>
-          <View style={[styles.dFlex, styles.firstButtons]}>
-            <Button
-              style={[
-                styles.width("25%"),
-                styles.btn,
-                styles.btnBg("#20bbd4"),
-                styles.invite
-              ]}
-            >
-              <Text style={styles.btnText}>Invite</Text>
+          <View
+            style={[
+              styles.dFlex,
+              styles.firstButtons,
+              { justifyContent: "space-between" }
+            ]}
+          >
+            <Button style={[styles.width("30%")]}>
+              <LinearGradient
+                colors={["#005fa6", "#0c8fd6", "#39bcd6"]}
+                style={{
+                  alignItems: "center",
+                  flex: 1,
+                  borderRadius: 3,
+                  borderColor: "black",
+                  borderWidth: 1,
+                  height: 44
+                }}
+              >
+                <Text
+                  style={[
+                    styles.btnText,
+                    { textAlign: "center", lineHeight: 39 }
+                  ]}
+                >
+                  INVITE
+                </Text>
+              </LinearGradient>
             </Button>
 
-            <Button
-              style={[
-                styles.width("25%"),
-                styles.btn,
-                styles.btnBg("#67bcff"),
-                styles.like
-              ]}
-            >
-              <Text style={styles.btnText}>Like</Text>
+            <Button style={[styles.width("30%")]}>
+              <LinearGradient
+                colors={["#15397c", "#185fe2", "#6cb2e2"]}
+                style={{
+                  alignItems: "center",
+                  flex: 1,
+                  borderRadius: 3,
+                  borderColor: "black",
+                  borderWidth: 1,
+                  height: 44
+                }}
+              >
+                <Text
+                  style={[
+                    styles.btnText,
+                    { textAlign: "center", lineHeight: 38 }
+                  ]}
+                >
+                  LIKE
+                </Text>
+              </LinearGradient>
             </Button>
 
-            <Button
-              style={[
-                styles.width("50%"),
-                styles.btn,
-                styles.btnBg("#fcbc30"),
-                styles.cancel
-              ]}
-              onPress={this.props.onCancel}
-            >
-              <Text style={styles.btnText}>Cancel</Text>
+            <Button onPress={this.props.onCancel} style={[styles.width("38%")]}>
+              <LinearGradient
+                colors={["#805c1a", "#e68b00", "#e6c31e"]}
+                style={{
+                  alignItems: "center",
+                  flex: 1,
+                  borderRadius: 3,
+                  borderColor: "black",
+                  borderWidth: 1,
+                  height: 44
+                }}
+              >
+                <Text
+                  style={[
+                    styles.btnText,
+                    { textAlign: "center", lineHeight: 38 }
+                  ]}
+                >
+                  CANCEL
+                </Text>
+              </LinearGradient>
             </Button>
           </View>
 
-          <View style={[styles.dFlex, styles.secondButtons]}>
-            <Button
-              style={[
-                styles.width("25%"),
-                styles.btn,
-                styles.btnBg("#a2b224"),
-                styles.delete
-              ]}
-            >
-              <Text style={styles.btnText}>Delete</Text>
+          <View
+            style={[
+              styles.dFlex,
+              styles.secondButtons,
+              { justifyContent: "space-between" }
+            ]}
+          >
+            <Button style={[styles.width("30%")]}>
+              <LinearGradient
+                colors={["#045000", "#499301", "#7dc836"]}
+                style={{
+                  alignItems: "center",
+                  flex: 1,
+                  borderRadius: 3,
+                  borderColor: "black",
+                  borderWidth: 1,
+                  height: 44
+                }}
+              >
+                <Text
+                  style={[
+                    styles.btnText,
+                    { textAlign: "center", lineHeight: 38 }
+                  ]}
+                >
+                  DELETE
+                </Text>
+              </LinearGradient>
             </Button>
-            <Button
-              style={[
-                styles.width("25%"),
-                styles.btn,
-                styles.btnBg("#f9622d"),
-                styles.add
-              ]}
-              onPress={() => {
-                this.props.seePost();
-              }}
-            >
-              <Text style={styles.btnText}>View Post</Text>
+
+            <Button style={[styles.width("30%")]}>
+              <LinearGradient
+                colors={["#803d1a", "#e63e00", "#e6a34b"]}
+                style={{
+                  alignItems: "center",
+                  flex: 1,
+                  borderRadius: 3,
+                  borderColor: "black",
+                  borderWidth: 1,
+                  height: 44
+                }}
+              >
+                <Text
+                  style={[
+                    styles.btnText,
+                    { textAlign: "center", lineHeight: 38 }
+                  ]}
+                >
+                  ADD
+                </Text>
+              </LinearGradient>
             </Button>
+
             <Button
-              style={[
-                styles.width("50%"),
-                styles.btn,
-                styles.btnBg("#c42222"),
-                styles.next
-              ]}
               onPress={() => {
                 if (uid === neighborID) {
                   this.props.openPostWindow();
@@ -123,10 +188,28 @@ class RenderUserPanel extends React.Component {
                   this.props.openIMWindow();
                 }
               }}
+              style={[styles.width("38%")]}
             >
-              <Text style={styles.btnText}>
-                {uid === neighborID ? "New Post" : "Send IM"}
-              </Text>
+              <LinearGradient
+                colors={["#ff9999", "#f90f18", "#df0000"]}
+                style={{
+                  alignItems: "center",
+                  flex: 1,
+                  borderRadius: 3,
+                  borderColor: "black",
+                  borderWidth: 1,
+                  height: 44
+                }}
+              >
+                <Text
+                  style={[
+                    styles.btnText,
+                    { textAlign: "center", lineHeight: 38 }
+                  ]}
+                >
+                  {uid === neighborID ? "NEW POST" : "SEND IM"}
+                </Text>
+              </LinearGradient>
             </Button>
           </View>
         </Content>
