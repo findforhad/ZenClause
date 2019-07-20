@@ -447,7 +447,17 @@ class Dashboard extends React.Component {
 
   renderModalContent = () => (
     <Container style={{ backgroundColor: "transparent" }}>
-      <View style={styles.contView}>
+      <View
+        style={[
+          styles.contView,
+          {
+            backgroundColor: "#817c8b",
+            padding: 10,
+            borderWidth: 2,
+            borderColor: "black"
+          }
+        ]}
+      >
         <View style={{ flexDirection: "row", flex: 1 }}>
           <View style={{ flex: 1 }}>
             <Card
@@ -455,7 +465,8 @@ class Dashboard extends React.Component {
                 backgroundColor: "#1fbbd4",
                 justifyContent: "center",
                 alignItems: "center",
-                flex: 1
+                flex: 1,
+                
               }}
             >
               <CardItem
@@ -478,7 +489,9 @@ class Dashboard extends React.Component {
                 backgroundColor: "#66bcff",
                 justifyContent: "center",
                 alignItems: "center",
-                flex: 1
+                flex: 1,
+                borderWidth: 2,
+                borderColor: "black"
               }}
             >
               <CardItem
@@ -505,7 +518,9 @@ class Dashboard extends React.Component {
                 backgroundColor: "#a1b223",
                 justifyContent: "center",
                 alignItems: "center",
-                flex: 1
+                flex: 1,
+                borderWidth: 2,
+                borderColor: "black"
               }}
             >
               <CardItem
@@ -525,7 +540,9 @@ class Dashboard extends React.Component {
                 backgroundColor: "#f9622d",
                 justifyContent: "center",
                 alignItems: "center",
-                flex: 1
+                flex: 1,
+                borderWidth: 2,
+                borderColor: "black"
               }}
             >
               <CardItem
@@ -552,7 +569,9 @@ class Dashboard extends React.Component {
                 backgroundColor: "#fcbc2f",
                 justifyContent: "center",
                 alignItems: "center",
-                flex: 1
+                flex: 1,
+                borderWidth: 2,
+                borderColor: "black"
               }}
             >
               <CardItem
@@ -569,33 +588,16 @@ class Dashboard extends React.Component {
             </Card>
           </View>
 
+         
           <View style={{ flex: 1 }}>
             <Card
               style={{
                 backgroundColor: "#c32222",
                 justifyContent: "center",
                 alignItems: "center",
-                flex: 1
-              }}
-            >
-              <CardItem
-                button
-                onPress={() => {
-                  this.setState({ visibleModal: null });
-                }}
-                style={{ backgroundColor: "#c32222" }}
-              >
-                <Text style={{ backgroundColor: "#c32222" }}>Cancel</Text>
-              </CardItem>
-            </Card>
-          </View>
-          <View style={{ flex: 1 }}>
-            <Card
-              style={{
-                backgroundColor: "#c32222",
-                justifyContent: "center",
-                alignItems: "center",
-                flex: 1
+                flex: 1,
+                borderWidth: 2,
+                borderColor: "black"
               }}
             >
               <CardItem
@@ -608,6 +610,28 @@ class Dashboard extends React.Component {
                 style={{ backgroundColor: "#c32222" }}
               >
                 <Text style={{ backgroundColor: "#c32222" }}>Log Out</Text>
+              </CardItem>
+            </Card>
+          </View>
+          <View style={{ flex: 1 }}>
+            <Card
+              style={{
+                backgroundColor: "#c32222",
+                justifyContent: "center",
+                alignItems: "center",
+                flex: 1,
+                borderWidth: 2,
+                borderColor: "black"
+              }}
+            >
+              <CardItem
+                button
+                onPress={() => {
+                  this.setState({ visibleModal: null });
+                }}
+                style={{ backgroundColor: "#c32222" }}
+              >
+                <Text style={{ backgroundColor: "#c32222" }}>Cancel</Text>
               </CardItem>
             </Card>
           </View>
@@ -1143,7 +1167,7 @@ const styles = StyleSheet.create({
 export default Dashboard;
 
 import DoubleClick from "react-native-double-tap";
-import HouseMenu from "./dashboard/HouseMenu"
+import HouseMenu from "./dashboard/HouseMenu";
 
 class RenderHouse extends React.Component {
   state = {
@@ -1397,7 +1421,6 @@ class RenderHouse extends React.Component {
         </View> */}
 
         <HouseMenu />
-       
       </Modal>
     );
   };

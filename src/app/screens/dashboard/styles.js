@@ -23,8 +23,8 @@ export const styles = StyleSheet.create({
     borderRadius: 4,
     borderColor: "#000000",
     borderWidth: 2,
-    width: "70%",
-    height: 600
+    width: "50%",
+    height: 700
   },
   menuModalContent: {
     backgroundColor: "#5e8ac6",

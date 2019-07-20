@@ -591,9 +591,33 @@ class Dashboard extends React.Component {
           )
         }
       >
-        <View style={styles.button}>
-          <Text>Change Email </Text>
-        </View>
+        <TouchableOpacity
+            style={{
+              width: "49%",
+              height: 70,
+              borderColor: "black",
+              borderWidth: 2,
+              borderRadius: 3
+            }}
+            onPress={() => console.log("Invite Method Called")}
+          >
+            <LinearGradient
+              colors={["#32a5ff", "#76c3ff", "#9ad2ff"]}
+              style={{
+                alignItems: "center",
+                flex: 1
+              }}
+            >
+              <Text
+                style={[
+                  styles.btnText,
+                  { textAlign: "center", lineHeight: 70 }
+                ]}
+              >
+                MOVE
+              </Text>
+            </LinearGradient>
+          </TouchableOpacity>
       </TouchableOpacity>
       {/* {this.renderButton("Close", () => this.setState({ visibleModal: false }))} */}
     </View>
